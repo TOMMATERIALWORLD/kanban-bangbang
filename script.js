@@ -1,0 +1,1 @@
+document.querySelectorAll('.add-cart').forEach(btn=>{btn.addEventListener('click',()=>{const name=btn.dataset.name;localStorage.setItem('kanban-bangbang-selected-kit',name);const toast=document.getElementById('cartToast');toast.textContent=`${name} を選択しました`;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1800);});});
