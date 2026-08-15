@@ -129,7 +129,17 @@ function setSelectedKit(name,scrollToContact=false){
   }
 }
 
+function appendBannerDesignFaq(){
+  const faqWrap=document.querySelector('#faq .faq-wrap');
+  if(!faqWrap || faqWrap.querySelector('[data-faq="banner-design"]'))return;
+  const details=document.createElement('details');
+  details.dataset.faq='banner-design';
+  details.innerHTML='<summary>バナーデザインも頼めますか？</summary><p>バナーデザインの製作からご相談にのることも、もちろん可能です。写真、イラスト、文字、色など、ご希望に応じて別途対応させていただきます。</p>';
+  faqWrap.appendChild(details);
+}
+
 applyProductCatalog();
+appendBannerDesignFaq();
 
 document.querySelectorAll('.add-cart').forEach(btn=>{
   btn.addEventListener('click',()=>setSelectedKit(btn.dataset.name));
