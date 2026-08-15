@@ -138,8 +138,55 @@ function appendBannerDesignFaq(){
   faqWrap.appendChild(details);
 }
 
+function applyHighQualityImages(){
+  const style=document.createElement('style');
+  style.textContent=`
+    .hero-media>img,.editorial-gallery img{image-rendering:auto;-ms-interpolation-mode:bicubic}
+    .editorial-gallery figure.g-tall{grid-row:span 2}
+    .company-info{margin-top:16px;padding-top:14px;border-top:1px solid #e7e7e7;line-height:1.85!important}
+    .company-info strong{color:#111;font-size:12px}
+    .company-info a{color:#111;text-decoration:none;font-weight:800}
+    @media(max-width:600px){.editorial-gallery figure.g-tall{grid-row:span 1}}
+  `;
+  document.head.appendChild(style);
+
+  const hero=document.querySelector('.hero-media>img');
+  if(hero){
+    hero.src='assets/hero.jpg';
+    hero.alt='看板のバンバン 黄色い保育園バナーの施工例';
+    hero.width=1400;
+    hero.height=1050;
+    hero.decoding='async';
+    hero.fetchPriority='high';
+  }
+
+  const gallery=document.querySelector('.editorial-gallery');
+  if(gallery){
+    gallery.innerHTML=`
+      <figure class="g-wide"><img src="assets/case-01.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="青い保育園バナーの施工例"><figcaption>保育園 / 自立ボード</figcaption></figure>
+      <figure><img src="assets/case-02.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="ピンクの保育園バナーの施工例"><figcaption>保育園 / 塀</figcaption></figure>
+      <figure class="gallery-text"><span>REAL INSTALL</span><b>実際の設置場所で、<br>サイズ感まで伝わる。</b></figure>
+      <figure class="g-tall"><img src="assets/case-06.jpg" width="1000" height="1333" loading="lazy" decoding="async" alt="KUJIRAI 中古重機告知の黒い大型バナー"><figcaption>KUJIRAI / 中古重機告知</figcaption></figure>
+      <figure class="g-tall"><img src="assets/case-07.jpg" width="1000" height="1333" loading="lazy" decoding="async" alt="企業グループの大型バナー施工例"><figcaption>企業サイン / 大型バナー</figcaption></figure>
+      <figure class="g-wide"><img src="assets/case-08.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="店舗案内の大型横長バナー施工例"><figcaption>店舗案内 / 大型横長バナー</figcaption></figure>
+      <figure class="gallery-text g-wide"><span>CHANGE THE BANNER</span><b>フレームはそのまま。<br>告知だけ、すぐ更新。</b></figure>`;
+  }
+}
+
+function appendCompanyInfo(){
+  const footerGrid=document.querySelector('.footer-grid');
+  if(!footerGrid || footerGrid.querySelector('.company-info'))return;
+  const info=document.createElement('p');
+  info.className='company-info';
+  info.innerHTML='<strong>株式会社クジライ</strong><br>〒304-0067 茨城県下妻市下妻乙1212-1<br><a href="tel:0296432622">0296-43-2622</a>';
+  const target=footerGrid.children[1] || footerGrid;
+  target.appendChild(info);
+}
+
 applyProductCatalog();
 appendBannerDesignFaq();
+applyHighQualityImages();
+appendCompanyInfo();
 
 document.querySelectorAll('.add-cart').forEach(btn=>{
   btn.addEventListener('click',()=>setSelectedKit(btn.dataset.name));
