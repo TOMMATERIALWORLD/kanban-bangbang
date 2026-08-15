@@ -152,10 +152,10 @@ function applyHighQualityImages(){
 
   const hero=document.querySelector('.hero-media>img');
   if(hero){
-    hero.src='assets/hero.jpg';
+    hero.src='assets/hero.avif';
     hero.alt='看板のバンバン 黄色い保育園バナーの施工例';
-    hero.width=1400;
-    hero.height=1050;
+    hero.width=700;
+    hero.height=525;
     hero.decoding='async';
     hero.fetchPriority='high';
   }
@@ -163,12 +163,12 @@ function applyHighQualityImages(){
   const gallery=document.querySelector('.editorial-gallery');
   if(gallery){
     gallery.innerHTML=`
-      <figure class="g-wide"><img src="assets/case-01.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="青い保育園バナーの施工例"><figcaption>保育園 / 自立ボード</figcaption></figure>
-      <figure><img src="assets/case-02.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="ピンクの保育園バナーの施工例"><figcaption>保育園 / 塀</figcaption></figure>
+      <figure class="g-wide"><img src="assets/case-01.avif" width="600" height="450" loading="lazy" decoding="async" alt="青い保育園バナーの施工例"><figcaption>保育園 / 自立ボード</figcaption></figure>
+      <figure><img src="assets/case-02.avif" width="600" height="450" loading="lazy" decoding="async" alt="ピンクの保育園バナーの施工例"><figcaption>保育園 / 塀</figcaption></figure>
       <figure class="gallery-text"><span>REAL INSTALL</span><b>実際の設置場所で、<br>サイズ感まで伝わる。</b></figure>
-      <figure class="g-tall"><img src="assets/case-06.jpg" width="1000" height="1333" loading="lazy" decoding="async" alt="KUJIRAI 中古重機告知の黒い大型バナー"><figcaption>KUJIRAI / 中古重機告知</figcaption></figure>
-      <figure class="g-tall"><img src="assets/case-07.jpg" width="1000" height="1333" loading="lazy" decoding="async" alt="企業グループの大型バナー施工例"><figcaption>企業サイン / 大型バナー</figcaption></figure>
-      <figure class="g-wide"><img src="assets/case-08.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="店舗案内の大型横長バナー施工例"><figcaption>店舗案内 / 大型横長バナー</figcaption></figure>
+      <figure class="g-tall"><img src="assets/case-06.avif" width="500" height="666" loading="lazy" decoding="async" alt="KUJIRAI 中古重機告知の黒い大型バナー"><figcaption>KUJIRAI / 中古重機告知</figcaption></figure>
+      <figure class="g-tall"><img src="assets/case-07.avif" width="500" height="666" loading="lazy" decoding="async" alt="企業グループの大型バナー施工例"><figcaption>企業サイン / 大型バナー</figcaption></figure>
+      <figure class="g-wide"><img src="assets/case-08.avif" width="600" height="450" loading="lazy" decoding="async" alt="店舗案内の大型横長バナー施工例"><figcaption>店舗案内 / 大型横長バナー</figcaption></figure>
       <figure class="gallery-text g-wide"><span>CHANGE THE BANNER</span><b>フレームはそのまま。<br>告知だけ、すぐ更新。</b></figure>`;
   }
 }
