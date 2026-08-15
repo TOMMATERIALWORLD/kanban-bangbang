@@ -53,7 +53,6 @@ function applyHighQualityImages(){
   style.textContent=`
     .hero-media>img,.editorial-gallery img{image-rendering:auto;-ms-interpolation-mode:bicubic}
     .editorial-gallery figure.g-tall{grid-row:span 2}
-    .editorial-gallery figure.color-case img{object-position:center}
     .company-info{margin-top:16px;padding-top:14px;border-top:1px solid #e7e7e7;line-height:1.85!important}
     .company-info strong{color:#111;font-size:12px}.company-info a{color:#111;text-decoration:none;font-weight:800}
     @media(max-width:600px){.editorial-gallery figure.g-tall{grid-row:span 1}}
@@ -64,10 +63,10 @@ function applyHighQualityImages(){
   const gallery=document.querySelector('.editorial-gallery');
   if(gallery){
     gallery.innerHTML=`
-      <figure class="color-case"><img src="assets/case-pink-vertical.webp" width="420" height="560" loading="lazy" decoding="async" alt="ピンクの縦型保育園バナー施工例"><figcaption>保育園 / ピンク</figcaption></figure>
-      <figure class="color-case"><img src="assets/case-01.avif" width="600" height="450" loading="lazy" decoding="async" alt="水色の保育園バナー施工例"><figcaption>保育園 / 水色</figcaption></figure>
-      <figure class="color-case"><img src="assets/hero.avif" width="700" height="525" loading="lazy" decoding="async" alt="黄色の保育園バナー施工例"><figcaption>保育園 / 黄色</figcaption></figure>
-      <figure class="gallery-text"><span>COLOR VARIATION</span><b>ピンク・水色・黄色。<br>色で印象を変えられる。</b></figure>
+      <figure><img src="assets/pink-case-new.avif" width="800" height="600" loading="lazy" decoding="async" alt="ピンクの保育園バナー施工例"><figcaption>保育園 / ピンク</figcaption></figure>
+      <figure><img src="assets/case-01.avif" width="600" height="450" loading="lazy" decoding="async" alt="水色の保育園バナー施工例"><figcaption>保育園 / 水色</figcaption></figure>
+      <figure class="g-wide"><img src="assets/hero.avif" width="700" height="525" loading="lazy" decoding="async" alt="黄色の保育園バナー施工例"><figcaption>保育園 / 黄色</figcaption></figure>
+      <figure class="gallery-text"><span>REAL INSTALL</span><b>色で魅せる。<br>設置場所に合わせて選べる。</b></figure>
       <figure class="g-tall"><img src="assets/case-06.avif" width="500" height="666" loading="lazy" decoding="async" alt="KUJIRAI 中古重機告知の黒い大型バナー"><figcaption>KUJIRAI / 中古重機告知</figcaption></figure>
       <figure class="g-tall"><img src="assets/case-07.avif" width="500" height="666" loading="lazy" decoding="async" alt="企業グループの大型バナー施工例"><figcaption>企業サイン / 大型バナー</figcaption></figure>
       <figure class="g-wide"><img src="assets/case-08.avif" width="600" height="450" loading="lazy" decoding="async" alt="店舗案内の大型横長バナー施工例"><figcaption>店舗案内 / 大型横長バナー</figcaption></figure>
